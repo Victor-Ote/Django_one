@@ -9,3 +9,8 @@ class Clients(models.Model):
     name = models.CharField('Name', max_length=100)
     email = models.EmailField('Email')
     phone = models.CharField('Phone', max_length=20)
+    
+class Sellers(models.Model):
+    name = models.CharField('Name', max_length=100)
+    email = models.EmailField('Email')
+    phone = models.CharField('Phone', max_length=20)
