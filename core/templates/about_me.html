@@ -3,12 +3,16 @@
     <title>Aboud Me</title>
 </head>
 <body>
-    <h1>Here you can find information about me</h1>
+    <h1>How are you?</h1>
   
-    {% for client in clients %}
-        <h2>{{ client.name }}</h2>
-        <p>Email: {{ client.email }}</p>
-        <p>Phone: {{ client.phone }}</p>
-    {% endfor %}
+   <h3>Select your ID number to continue:</h3>
+
+   
+
+    <ul>
+        {%for client in clients%}
+            <li><a href="{% url 'who_am_i' client.id %}">{{ client.id }}</a></li>
+        {%endfor%}
+    </ul>
 </body>
 </html>

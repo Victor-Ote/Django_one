@@ -22,3 +22,7 @@ def about_me(request):
         'clients': clients
     }
     return render(request, 'about_me.html', context)
+
+def who_am_i(request, pk):
+    print(f'Here is the PK: {pk}')
+    return render(request, 'who_am_i.html')
