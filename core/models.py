@@ -3,7 +3,7 @@ from django.db import models
 class Product(models.Model):
     name = models.CharField('Name', max_length=100)
     price = models.DecimalField('Price', max_digits=6, decimal_places=2)
-    stock = models.ImageField('In Stock')
+    stock = models.IntegerField('In Stock')
 
 class Clients(models.Model):
     name = models.CharField('Name', max_length=100)
