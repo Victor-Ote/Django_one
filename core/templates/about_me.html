@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Aboud Me</title>
+</head>
+<body>
+    <h1>Here you can find information about me</h1>
+  
+    {% for client in clients %}
+        <h2>{{ client.name }}</h2>
+        <p>Email: {{ client.email }}</p>
+        <p>Phone: {{ client.phone }}</p>
+    {% endfor %}
+</body>
+</html>
