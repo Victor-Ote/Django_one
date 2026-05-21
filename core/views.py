@@ -24,5 +24,10 @@ def about_me(request):
     return render(request, 'about_me.html', context)
 
 def who_am_i(request, pk):
+    clients = Clients.objects.get(id=pk)
+    context={
+        'clients':clients
+    }
     print(f'Here is the PK: {pk}')
-    return render(request, 'who_am_i.html')
+    print(f'Here is your name: {clients.phone}')
+    return render(request, 'who_am_i.html', context)

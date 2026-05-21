@@ -6,5 +6,5 @@ urlpatterns = [
     path('', index),
     path('contact/', contact),
     path('about_me/', about_me,),
-    path('who_am_i/<int:pk>', about_me, name='who_am_i')
+    path('about_me/<int:pk>', who_am_i, name='who_am_i')
 ]
