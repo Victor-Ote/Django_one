@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product, Clients 
 
 name = 'Victor'
@@ -23,11 +23,14 @@ def about_me(request):
     }
     return render(request, 'about_me.html', context)
 
-def who_am_i(request, pk):
-    clients = Clients.objects.get(id=pk)
+def who_am_i(request, nameC):
+    result_name = nameC[0].upper() + nameC[1:]
+    # clients = Clients.objects.get(name=f'{result_name}')
+    clients = get_object_or_404(Clients, name=f'{result_name}')
+    
+    
     context={
         'clients':clients
     }
-    print(f'Here is the PK: {pk}')
-    print(f'Here is your name: {clients.phone}')
     return render(request, 'who_am_i.html', context)
+
