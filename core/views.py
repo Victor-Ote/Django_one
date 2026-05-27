@@ -23,14 +23,16 @@ def about_me(request):
     }
     return render(request, 'about_me.html', context)
 
-def who_am_i(request, nameC):
-    result_name = nameC[0].upper() + nameC[1:]
+def who_am_i(request, name):
+    result_name = name[0].upper() + name[1:]
     # clients = Clients.objects.get(name=f'{result_name}')
     clients = get_object_or_404(Clients, name=f'{result_name}')
     
-    
-    context={
-        'clients':clients
+    context = {
+        'clients': clients
     }
     return render(request, 'who_am_i.html', context)
+
+def error_404(request, exception):
+    return render(request, '404.html', status=404)
 
